@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JobBuddy · An AI interviewer you practise with on a live video call · Vishnu</title>
+<meta name="description" content="JobBuddy puts you on a live video call with Meera, an AI HR interviewer who reacts while you talk. Designed and built alone, directing AI agents.">
+<meta property="og:title" content="JobBuddy: an AI interviewer you practise with on a live video call">
+<meta property="og:description" content="Designed and built alone, directing AI agents that wrote the code and generated her motion.">
+<meta property="og:image" content="assets/01-hero.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#fafafa">
+<link rel="preload" href="fonts/geist-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/geist-sans-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<nav class="toc" aria-label="Sections"><ol></ol></nav>
+<button class="toc-pill" type="button" aria-expanded="false"><span class="toc-pill-name"></span><span class="toc-pill-n"></span></button>
+
+<div class="wrap">
+  <nav class="top" aria-label="Site">
+    <a href="https://vishnurnair.framer.website">← Vishnu's portfolio</a>
+    <span>JobBuddy</span>
+  </nav>
+
+<main>
+
+  <div class="hero">
+    <p class="eyebrow">Case study · Personal project · Built solo</p>
+    <h1>JobBuddy</h1>
+    <p class="subtitle">An AI interviewer you practise with on a live video call</p>
+    <p class="lead">JobBuddy puts you on a live video call with Meera, an AI HR interviewer who reacts while you talk. After the call, her scorecard shows what you said and what to say instead. Retry the question and see the improvement. I designed it and built it alone, directing AI agents that wrote the code and generated her motion.</p>
+
+    <nav class="guide" aria-label="What's inside"><span>Inside</span><a href="#problem">The product calls I made</a><a href="#present">How Meera was crafted</a><a href="#built">How I built it alone, and proved it</a></nav>
+    <figure class="frame">
+      <div class="frame-in"><img width="2000" height="1375" src="assets/01-hero.webp" alt="Three JobBuddy screens: Home, a call with Meera in a video tile, and the scorecard showing 3.4 out of 5."></div>
+    </figure>
+
+    <!-- Demo video goes here. Example:
+    <video class="video" src="assets/demo.mp4" controls playsinline preload="metadata" poster="assets/01-hero.webp"></video>
+    -->
+
+    <dl class="facts">
+      <div class="key"><dt>How I built it</dt><dd>Solo, through agentic workflows. Claude Code wrote the app. Meera's rig and motion were generated as code with the Rive CLI, with no hand animation.</dd></div>
+      <div><dt>My role</dt><dd>Sole owner, end to end: product strategy, UX and UI, and Meera's character, motion and behaviour. I directed every agent and reviewed every build.</dd></div>
+      <div><dt>Time</dt><dd>~6 hours. My time went to designing, deciding and reviewing.</dd></div>
+      <div><dt>Type</dt><dd>Personal project</dd></div>
+      <div class="key"><dt>My stack</dt><dd>Claude, Claude Code, Paper, Rive, ElevenLabs Agents, Gemini, Next.js</dd></div>
+    </dl>
+
+    <div class="nums">
+      <div class="num hl"><strong>3x</strong><span>more movement while she talks. Measured, then tuned by eye.</span></div>
+      <div class="num"><strong>15 → 2</strong><span>mouth freezes mid sentence, traced through call logs.</span></div>
+      <div class="num"><strong>12</strong><span>expressions from one set of face controls.</span></div>
+      <div class="num"><strong>16–20 s</strong><span>for the scorecard. It used to hang.</span></div>
+    </div>
+
+    <figure class="frame">
+      <div class="frame-in"><img width="1600" height="970" src="assets/02-how-built.webp" loading="lazy" alt="Diagram: me in the centre, connected to five agents. Claude for specs and prompts, Claude Code for the app, the Rive CLI for Meera's rig and motion, ElevenLabs for her voice, Gemini for the scorecard."></div>
+    </figure>
+  </div>
+    <!-- Act 1. Judgement -->
+  <section id="problem" data-toc="The problem">
+    <p class="eyebrow">The problem</p>
+    <h2>You can tell an answer went badly. You can't tell what to fix, or how.</h2>
+    <div class="prose" style="margin-top:32px">
+      <p>It's for anyone with a real interview coming up, at any level. Every level has a behavioural round, and those answers need practice out loud.</p>
+      <p>Telling your story clearly under pressure is a skill, separate from doing the job well, and it improves with practice. I've seen how people prepare, and done it myself: polish answers with AI chat, then rehearse them alone. Nothing stops you mid ramble, and nothing tells you what to fix. Getting better takes four steps, and practising alone, most of them are guesswork.</p>
+    </div>
+    <div class="gap" role="table" aria-label="Four steps to a better answer, alone and with JobBuddy">
+      <div class="h rowlabel" role="columnheader"></div>
+      <div class="step" role="columnheader">Notice it<small>An answer went badly</small></div>
+      <div class="step" role="columnheader">Name it<small>Too long, too vague, or off the question?</small></div>
+      <div class="step" role="columnheader">Fix it<small>What does a better answer sound like?</small></div>
+      <div class="step" role="columnheader">Practise it<small>Try it again, for real</small></div>
+      <div class="row rowlabel" role="rowheader">Practising alone</div>
+      <div class="alone">A vague feeling, after the fact</div>
+      <div class="alone">Your guess</div>
+      <div class="alone">Your guess</div>
+      <div class="alone">In your head</div>
+      <div class="row rowlabel" role="rowheader">With JobBuddy</div>
+      <div class="with"><span>Meera reacts while you talk</span></div>
+      <div class="with"><span>The scorecard names the pattern</span></div>
+      <div class="with"><span>"You said" next to "try this"</span></div>
+      <div class="with"><span>Retry that question on a call</span></div>
+    </div>
+    <div class="prose">
+      <p>I also wanted to see how far I could take a product alone, with AI writing the code, at a quality I could prove.</p>
+      <p><b>Why a call, not a chat.</b> The hard part of an interview isn't knowing the answer. It's giving a good one on the spot, while someone watches you on a video call. In a chat you can pause, think and edit before you send. Rambling, fillers and answers with no result only show up when you speak. And a chat reacts only after you finish. A call can react while you talk: a nod when an answer lands, a look when you drift, a cut in when you run long.</p>
+      <p>My bet: practice works when it feels like the real thing and tells you exactly what to fix.</p>
+    </div>
+  </section>
+
+  <section id="loop" data-toc="What it does">
+    <p class="eyebrow">What it does</p>
+    <h2>Every call ends with better answers than you walked in with.</h2>
+    <p class="lead prose" style="margin-top:28px">JobBuddy is one loop: take a call, read the scorecard, retry your weakest answer. The new answer is scored next to the old one, so you know you improved instead of hoping you did.</p>
+    <figure class="frame">
+      <div class="frame-in"><img width="1476" height="2000" src="assets/03-loop.webp" loading="lazy" alt="Five screens: the setup sheet, the call, the scorecard, the retry result, and Home with the streak, each with a caption."></div>
+    </figure>
+    <h3 class="sub">The call ends. Now you find out what to fix, and how.</h3>
+    <div class="prose" style="margin-top:20px">
+      <p>You hang up, and within 20 seconds the scorecard is ready.</p>
+      <p>Not a list of flaws. One pattern to work on, with proof, like "2 of 3 answers ended before the result". Then your two or three weakest moments: what you said, next to how to say it better, built only from your own facts and judged against your level. A missing number stays a blank for you to fill. It's never invented.</p>
+      <p>The call's score stays as it was. A retry is scored on its own, next to it. So when it says "+2 on structure", you really got better.</p>
+    </div>
+    <figure class="frame" style="margin-top:40px"><div class="frame-in"><img src="assets/12-scorecard.webp" width="1600" height="1150" loading="lazy" alt="The scorecard and the retry result, annotated. One pattern, with proof: 2 of 3 answers stopped before the outcome. What you said, next to try this. A blank for your number, never invented. Retry this answer leads to the retry result, where the biggest gain is shown by skill: +2, structure, 2 to 4."></div></figure>
+    <details class="uth wide">
+      <summary><span>Under the hood</span> Judged against your level</summary>
+      <p style="margin-top:0">Each answer is scored 1 to 5 on five skills: clarity (can it be followed on first listen), structure (situation, action, result, in that order), evidence (specifics, with a number or outcome), relevance (does it answer the question asked) and delivery (pace, filler, hedging). The bar moves with your level. Junior: what you did and learned. Mid: what you owned and the outcome. Senior and above: scope, decisions, influence and tradeoffs. A 3 is a passable answer at your level. Technical correctness is never graded.</p>
+      <table class="rub">
+        <thead><tr><th>Skill</th><th>1</th><th>3</th><th>5</th></tr></thead>
+        <tbody>
+          <tr><td>Clarity</td><td>Hard to follow what happened</td><td>Followable with effort</td><td>Clear on first listen</td></tr>
+          <tr><td>Structure</td><td>No situation, action or result</td><td>Two of the three</td><td>All three, in order, result last</td></tr>
+          <tr><td>Evidence</td><td>No specifics</td><td>Some specifics, no numbers</td><td>Specific, with a number or concrete outcome</td></tr>
+          <tr><td>Relevance</td><td>Answers a different question</td><td>Mostly on the question</td><td>Directly answers it, nothing extra</td></tr>
+          <tr><td>Delivery</td><td>Heavy filler, hedging or rambling</td><td>Some filler, or one long stretch</td><td>Steady pace, little filler, no hedging</td></tr>
+        </tbody>
+      </table>
+    </details>
+    <div class="prose" style="margin-top:56px">
+      <h3>Designed for, not yet measured</h3>
+      <p class="muted" style="margin:0">Not launched, so nothing is measured yet.</p>
+    </div>
+    <div class="mini">
+      <div><span class="k">Completion</span><p>Calls that reach the scorecard. Drop before it, and nothing else matters.</p></div>
+      <div><span class="k">Retry</span><p>People who retry their weakest answer. Finishing shows effort. Retrying shows they're getting better.</p></div>
+      <div><span class="k">Coming back</span><p>A streak for daily practice. No XP, which rewards time spent, not getting better.</p></div>
+    </div>
+    <p class="prose" style="margin-top:20px">First change I'd make: the nudge to practise today lives in History. It belongs on Home, where it can pull someone back.</p>
+
+    <div class="prose" style="margin-top:56px"><h3>The riskiest question first</h3><p class="muted" style="margin:0">Each step settled the biggest open question first.</p></div>
+    <div class="mini steps">
+      <div><span class="k">1 · Voice first</span><p>Could a voice agent run an interview, fire reactions and time lip sync? Tested in a bare call screen. A call from day one.</p></div>
+      <div><span class="k">2 · Then an orb</span><p>Was the call and scorecard loop worth having? A simple orb was enough to find out.</p></div>
+      <div><span class="k">3 · Meera last</span><p>She was the most expensive part, and her expressions came from what the settled flows needed.</p></div>
+    </div>
+  </section>
+
+  <section id="behaviour" data-toc="How Meera behaves">
+    <p class="eyebrow">How Meera behaves</p>
+    <h2>Meet Meera. She's a tough interviewer, and she's on your side.</h2>
+    <p class="lead prose" style="margin-top:28px">Meera had to feel like a real interviewer, not a chatbot that waits for you to finish. That came down to rules about when she reacts, when she speaks, and what she never does.</p>
+
+    <figure class="frame">
+      <div class="frame-in"><img width="1600" height="908" src="assets/05-long-answer.webp" loading="lazy" alt="Meera at four moments of a long answer: listening, glancing down at 75 seconds, checking her watch at 105, cutting in at 120. A timeline below."></div>
+    </figure>
+
+    <div class="rules">
+      <div class="rule"><span class="k">Cutting in</span><p class="q">At 120 s, at your next breath</p><p>The voice platform can't interrupt mid word, so the app watches the answer and escalates. Once per answer, at most.</p></div>
+      <div class="rule"><span class="k">Judging, not coaching</span><p class="q">"So how did that turn out?"</p><p>She asks for the result and steers you back once. Coaching waits for the scorecard, so the call stays real.</p></div>
+      <div class="rule"><span class="k">Silence</span><p class="q">"Take your time."</p><p>Early calls asked "Are you still there?" Now a pause means thinking. She leans in, then repeats the question in fewer words.</p></div>
+      <div class="rule"><span class="k">Fair by design</span><p class="q">Never asks about</p><div class="chips"><span>Age</span><span>Family</span><span>Religion</span><span>Health</span><span>Nationality</span><span>Salary history</span></div><p>A CV gap is asked about once, neutrally, and never flagged.</p></div>
+      <div class="rule"><span class="k">Warmth with limits</span><p class="q">Never "great question"</p><p>She looks impressed at most twice a call, and only for a clear result or a sharp insight.</p></div>
+    </div>
+    <details class="uth">
+      <summary><span>Under the hood</span> How Meera thinks</summary>
+      <ul class="clean">
+        <li><b>Two layers.</b> The app runs the timed rules, because the voice platform can't interrupt mid word. Meera judges the rest at the end of each turn, like a story with no result.</li>
+        <li><b>The long answer clock.</b> She glances down at 75 s, checks her watch at 105 s and cuts in at your next pause after 120 s. Nothing fires in the first 20 s, and she interrupts once per answer at most.</li>
+        <li><b>Filler and hedge bursts.</b> 6 or more fillers, or 3 or more hedges, in one answer raise a brow, once.</li>
+        <li><b>Her tools in the app.</b> react fires one of her reactions. flag notes a moment for the scorecard and plays her writing mood. setPhase moves the call from opening to interview to done. nextQuestion moves "Question 2 of 3", and the app ignores it if she hasn't asked a new one.</li>
+      </ul>
+    </details>
+    <p class="made"><b>How it was made:</b> her personality is a system prompt I wrote with Claude. Her live reactions are app rules I specced and Claude Code built.</p>
+  </section>
+
+  <section id="trust" data-toc="Built to be trusted">
+    <p class="eyebrow">Built to be trusted</p>
+    <h2>Practising for an interview is personal. The app treats it that way.</h2>
+    <div class="points">
+      <div><h3>Nothing leaves your phone</h3><p>No account, and calls are never recorded. Your CV, transcripts and scores stay on your phone.</p></div>
+    </div>
+    <figure class="frame">
+      <div class="frame-in"><img width="1600" height="978" src="assets/09-system.webp" loading="lazy" alt="System diagram: your phone holds the rig, live rules and local storage. Your voice goes to the voice agent; her voice, letter timing and tool calls come back. After the call, the transcript goes to the scorecard and the scorecard comes back."></div>
+    </figure>
+    <div class="tb">
+      <div class="tb-head"><p class="k">01 · Failure states</p><h3>Nothing gets stuck</h3><p>Every way a call can go wrong has a planned way out.</p></div>
+      <div class="fails">
+        <div class="f"><span class="if">The scorecard takes over 130 s</span><span class="ar" aria-hidden="true">→</span><div class="out"><b>A clear retry, never a spinner</b><span class="ui">Try again after some time.</span></div></div>
+        <div class="f"><span class="if">Meera forgets to hang up</span><span class="ar" aria-hidden="true">→</span><div class="out"><b>The app hangs up for her</b>3 s after her voice stops.</div></div>
+        <div class="f"><span class="if">The time limit runs out</span><span class="ar" aria-hidden="true">→</span><div class="out"><b>She's told to close</b>60 s later, the app ends the call.</div></div>
+        <div class="f"><span class="if">The connection drops</span><span class="ar" aria-hidden="true">→</span><div class="out"><b>Reconnect, same question</b><span class="ui">Sorry, we lost you. Where were we…</span></div></div>
+        <div class="f"><span class="if">You hang up early</span><span class="ar" aria-hidden="true">→</span><div class="out"><b>Saved as incomplete, with a way back</b><span class="ui">Want to jump back in where we stopped?</span></div></div>
+      </div>
+    </div>
+
+    <div class="tb">
+      <div class="tb-head"><p class="k">02 · Cost</p><h3>Call time is spent on the interview</h3><p>Every minute on a call costs voice credits. So anything that can happen off the call does.</p></div>
+      <div class="tl">
+        <div class="seg"><span class="when">Before the call</span><b>Setup</b><ul><li>Role and level</li><li>Length: 5, 10 or 20 min</li><li>CV and job post</li></ul><span class="cost">No voice credits</span></div>
+        <div class="seg on"><span class="when">On the call</span><b>Only the interview</b><ul><li>A short opening</li><li>Questions and follow ups</li><li>Her closing line</li></ul><div class="clock"><span><i>2 min left</i> no new questions</span><span><i>Time up</i> she closes</span><span><i>+60 s</i> the app hangs up</span></div><span class="cost">Voice credits</span></div>
+        <div class="seg"><span class="when">After the call</span><b>Scorecard</b><ul><li>Built from the transcript</li><li>Saved on your phone</li></ul><span class="cost">No voice credits</span></div>
+      </div>
+    </div>
+
+    <div class="tb">
+      <div class="tb-head"><p class="k">03 · Accessibility</p><h3>Accessible by design</h3><p><b>Motion follows your phone's settings.</b> Meera stays expressive but stops moving around.</p><p style="margin-top:16px"><b>Contrast is a rule in the tokens, not a final check.</b> The one primary action is pink with dark text, never white. White on pink measured 3.37:1 in my first direction, so the rule went into the system.</p></div>
+      <div class="rm" role="table" aria-label="What changes with reduced motion">
+        <div class="rm-r rm-h" role="row"><span role="columnheader"></span><span role="columnheader">Motion on</span><span role="columnheader">Reduced motion</span></div>
+        <div class="rm-r" role="row"><span role="rowheader">Expressions and blinks</span><span class="y" role="cell">On</span><span class="y" role="cell">On</span></div>
+        <div class="rm-r" role="row"><span role="rowheader">Breathing, bounce and lift</span><span class="y" role="cell">On</span><span class="n" role="cell">Off</span></div>
+        <div class="rm-r" role="row"><span role="rowheader">Body dip on arm poses</span><span class="y" role="cell">On</span><span class="n" role="cell">Off</span></div>
+        <div class="rm-r" role="row"><span role="rowheader">Ringing screen</span><span role="cell">Pulsing rings</span><span role="cell">A crossfade</span></div>
+        <div class="rm-r" role="row"><span role="rowheader">Score gauge</span><span role="cell">Counts up</span><span role="cell">Shows the score at once</span></div>
+      </div>
+    </div>
+    <p class="bridge">Rules made her act like an interviewer. She still had to feel like one.</p>
+  </section>
+
+  <!-- Act 2. Craft -->
+  <section id="present" data-toc="Making her feel present">
+    <p class="eyebrow">Making her feel present</p>
+    <h2>She had to feel like someone on the other end of a call.</h2>
+
+
+    <figure class="frame">
+      <div class="frame-in"><img width="1600" height="958" src="assets/06-face-controls.webp" loading="lazy" alt="Meera smiling, with her seven face controls labelled: brows, upper lids, lower lids, blush, head tilt, pupils and mouth."></div>
+    </figure>
+    <p class="made"><b>How it was made:</b> her concepts were designed in Paper. Her rig and every motion were generated as code with the Rive CLI from her vector parts. No keyframes were drawn by hand.</p>
+
+    <div class="points">
+      <div><h3>She felt flat, so I measured it</h3><p>She looked lifeless while talking. Per frame, 1.80% of her tile changed at idle and only 2.0% while talking: just her mouth. So I redrew her as Concept v2, with long hair, a clipboard, arm poses and a talking loop.</p></div>
+    </div>
+
+    <figure class="frame">
+      <div class="frame-in"><img width="1600" height="596" src="assets/07-motion.webp" loading="lazy" alt="Bar chart: idle 1.80%, talking on the first rig 2.0%, talking on Concept v2 5.92% of pixels changing per frame."></div>
+    </figure>
+
+    <div class="pair" style="margin-top:56px">
+      <figure><div class="clip-box"><img src="assets/real-call-talk.webp" width="390" height="612" loading="lazy" alt="A recording from a real call: Meera asks her first question, her head bobbing and tilting and her brows lifting as she talks." class="clip"></div><figcaption class="cap3"><b>Talking</b><dl><dt>When</dt><dd>Every time she speaks. This clip is from a real call.</dd><dt>What</dt><dd>A 2 s loop: her head bobs on uneven beats, tilts a little, and her brows lift. Her hair follows 120 ms late.</dd><dt>Why</dt><dd>With only her mouth moving, she looked frozen. Movement across her whole face makes her feel present.</dd></dl></figcaption></figure>
+      <figure><div class="clip-box"><img src="assets/writing-loop.gif" width="424" height="556" loading="lazy" alt="Meera writing on her clipboard, the pen moving behind the board." class="clip"></div><figcaption class="cap3"><b>Writing</b><dl><dt>When</dt><dd>When she notes something in your answer for the scorecard, and while the scorecard is being written.</dd><dt>What</dt><dd>Her eyes drop and her pen moves behind the clipboard.</dd><dt>Why</dt><dd>You can see your answer being noted, like with a real interviewer.</dd></dl></figcaption></figure>
+    </div>
+
+    <div class="points">
+      <div><h3>14 reactions, one face</h3><p>Each one is a short move on the same controls, then straight back to listening.</p></div>
+    </div>
+    <figure class="frame">
+      <div class="frame-in"><img src="assets/reactions.webp" width="1408" height="576" loading="lazy" alt="Fourteen short loops rendered from the rig: nod, smile, brow raise, glance down, one second, check watch, sit up, lean in, expectant, think, impressed, laugh, reassure and surprised."></div>
+      <figcaption>Every clip is rendered straight from the Rive file. Nothing here was drawn frame by frame.</figcaption>
+    </figure>
+    <details class="uth">
+      <summary><span>Under the hood</span> How the rig is built</summary>
+      <img src="assets/rig-layers.webp" width="1408" height="615" loading="lazy" alt="The app sets values on InterviewVM: mood, viseme, mouthOpen, lipSync, reducedMotion and 14 triggers. The rig runs nine layers at once: mood, talking motion, reactions, posture, blink, eye darts, mouth, viseme, and breathing with hair follow through." style="margin-top:4px;border-radius:12px">
+      <ul class="clean">
+        <li><b>Generated, not drawn.</b> A script turns her vector parts and a file of expression values into the whole rig. The Rive CLI compiles it.</li>
+        <li><b>One frame swaps.</b> Eyes, mouths, visemes and arm poses cut on a single frame, so two half transparent parts never overlap.</li>
+        <li><b>Guards in the build.</b> It refuses a rotation stored the long way round, and any part animated by two layers at once.</li>
+      </ul>
+      <pre class="term">$ node rive/rig/make-rig.js &amp;&amp; rive rive --publish=local
+rive  published rive/meera.riv (93479 bytes, 2243ms, 0 errors, 0 warnings)</pre>
+    </details>
+    <div class="points">
+      <div><h3>A call should ring</h3><p>"Connecting…" felt like loading, not calling someone. Now it rings, and her picture grows into the video tile when she answers. She appears in 0.8 s, down from 2.9 s.</p></div>
+    </div>
+    <figure class="frame">
+      <div class="frame-in"><img src="assets/ringing-flow.webp" width="1600" height="1024" loading="lazy" alt="Three steps. 1, Ringing: her round picture with lavender rings, Ringing…, and End call. 2, She answers: her picture grows into the video tile in 300 ms. 3, On the call: the live rig takes over and she says hi."></div>
+    </figure>
+    <p class="bridge">None of her was hand coded or hand animated. Here's how I built her, and the app, and how I checked the work.</p>
+  </section>
+
+  <!-- Act 3. Building -->
+  <section id="built" data-toc="How I built it alone with AI">
+    <p class="eyebrow">How I built it alone with AI</p>
+    <h2>Nothing shipped without proof.</h2>
+    <div class="prose" style="margin-top:32px">
+      <p>I wrote the PRD, made every product and design decision, designed the screens and the character, and tested every version on my phone. Claude Code wrote and tested the code. Claude helped me explore options and draft specs.</p>
+      <p>AI is fast, confident and sometimes wrong. So I reviewed every step: the spec before anything was built, the build once it came back, and the proof that it worked. Nothing counted as done on a report alone.</p>
+    </div>
+    <figure class="frame">
+      <div class="frame-in"><img width="1600" height="746" src="assets/04-proof-loop.webp" loading="lazy" alt="The proof loop: I decide. Claude drafts the spec and I review it. The agents build and I review what changed. Proof comes back and I check it. Then I review it on my phone, in a real call. A failed review goes back to the spec."></div>
+    </figure>
+
+    <figure style="margin-top:56px">
+      <div class="cs">
+        <div><img src="assets/cs-rig.webp" width="170" height="170" alt="Meera's warm smile, rendered from the Rive rig."><span>The rig</span></div>
+        <div><img src="assets/cs-ref.webp" width="170" height="170" alt="The reference pose for the warm smile."><span>The reference</span></div>
+        <div><img src="assets/cs-diff.webp" width="170" height="170" alt="The difference between the two, almost entirely grey."><span>The difference</span></div>
+      </div>
+      <figcaption>What proof looked like. Every state of the rig is rendered beside its reference. Grey means the pixels match. Across all 33 states, they differ by 0.09% at most.</figcaption>
+    </figure>
+
+    <details class="uth">
+      <summary><span>Under the hood</span> Everything that counted as proof</summary>
+      <ul class="clean">
+        <li><b>Contact sheets.</b> Every state of the rig beside its reference pose, with differing pixels in red.</li>
+        <li><b>Frame captures at 60 fps.</b> Every expression switch, so a one frame glitch can't hide.</li>
+        <li><b>Motion measurements.</b> How much of her moves per frame, idle and talking.</li>
+        <li><b>Real call logs.</b> When something broke on a call, the fix started from the log, not a guess.</li>
+      </ul>
+    </details>
+
+    <details class="uth wide" style="margin-top:56px">
+      <summary><span>3 calls</span> Where my call overruled the AI</summary>
+      <p style="margin-top:0">Three times, the AI's answer looked done and wasn't. What it proposed, and what I decided.</p>
+      <div class="ovr2">
+        <div class="o">
+          <div class="ov ov-q"><p class="qc dim">...</p><p class="qc">Tell me about a time a stakeholder pushed back…</p></div>
+          <div class="ot"><h4>The "..." on the question card</h4><p><span>The AI</span>Blamed a timing race.</p><p><span>My call</span>Wait for the call log. I had talked over her, and her cut off turn came through as "...". Empty lines are dropped now.</p></div>
+        </div>
+        <div class="o">
+          <div class="ov"><img src="assets/v1-notepad.webp" width="880" height="400" loading="lazy" alt="Before: a notepad low at her left and the pen up at her shoulder." style="object-position:50% 100%"><img src="assets/writing-loop.gif" width="424" height="556" loading="lazy" alt="After: she writes on a clipboard tilted toward her, the pen behind the board." style="object-position:50% 85%"></div>
+          <div class="ot"><h4>Writing that looked staged</h4><p><span>The AI</span>The pen shook in the air, then sat on the page.</p><p><span>My call</span>A clipboard tilted toward her, with the pen working behind the board.</p></div>
+        </div>
+        <div class="o">
+          <div class="ov"><img src="assets/v1-hero.webp" width="880" height="960" loading="lazy" alt="Before: a bun and a purple circle behind her head." style="object-position:50% 20%"><img src="assets/v2-hero.webp" width="716" height="940" loading="lazy" alt="After: long warm brown hair with a soft glow." style="object-position:50% 20%"></div>
+          <div class="ot"><h4>A profile picture, not a person</h4><p><span>The AI</span>A bun and a purple circle, to stand out on the dark screen. The bun bobbed with every nod.</p><p><span>My call</span>Long warm brown hair with a soft glow.</p></div>
+        </div>
+      </div>
+    </details>
+    <div class="prose" style="margin-top:28px">
+      <p><b>Fixes became rules.</b> When a bug had a clear cause, the build learned to refuse it. By the end, 120+ unit tests and 3 end to end suites all passed.</p>
+    </div>
+
+    <h3 class="sub">What real calls caught that tests didn't</h3>
+    <p class="lead prose" style="margin-top:28px">Every test passed, and four bugs still showed up only on real calls. Each fix started from the cause in the call log, not the symptom.</p>
+    <details class="uth wide">
+      <summary><span>4 bugs</span> What broke, why, and what I changed</summary>
+      <div class="ovr2">
+        <div class="o">
+          <div class="ov ov-gif"><img src="assets/lip-freeze.webp" width="616" height="280" loading="lazy" alt="The same spoken line on the real rig, run through the old and the new lip sync rules. Before: her mouth sticks on one shape for most of a word. After: it keeps changing with the letters. Played at three quarter speed."></div>
+          <div class="ot"><h4>Her mouth stopped while you could still hear her</h4><p><span>Why</span>Short sounds were merged away, so whole words collapsed into one shape.</p><p><span>Result</span>Freezes over 300 ms while she spoke went from 15 to 2, both real pauses.</p><p><span>The fix</span>Sounds grouped so no word collapses, a cap on how long one shape holds, and a guard for stalled timing.</p></div>
+        </div>
+        <div class="o">
+          <div class="ov ov-strips"><small>Before</small><img src="assets/flash-before.webp" width="1564" height="200" loading="lazy" alt="Her smile closing, before: two mouths fade through each other in grey."><small>After</small><img src="assets/flash-after.webp" width="1564" height="200" loading="lazy" alt="After: the mouth cuts cleanly in one frame."></div>
+          <div class="ot"><h4>Grey flashes when her face changed</h4><p><span>Why</span>Two half transparent parts overlapped.</p><p><span>The fix</span>Every swap cuts in one frame.</p></div>
+        </div>
+        <div class="o">
+          <div class="ov ov-q"><small>What you read</small><p class="qc dim"><mark>[calm]</mark> Tell me about a time…</p><small>What you read now</small><p class="qc">Tell me about a time…</p></div>
+          <div class="ot"><h4>Stage directions in the question you were reading</h4><p><span>Why</span>The voice model writes tone cues like "[calm]" into its text, and the app showed them as they came.</p><p><span>The fix</span>The app strips every cue before you see it, and expressive mode is off.</p></div>
+        </div>
+        <div class="o">
+          <div class="ov ov-gif"><img src="assets/lid-spin.webp" width="616" height="280" loading="lazy" alt="Before: as she looks up from her clipboard, her right upper lid spins a full turn. After: the same move, and the lid settles cleanly. Played at half speed."></div>
+          <div class="ot"><h4>An eyelid spun as she looked up from her clipboard</h4><p><span>Why</span>An angle was saved the long way round.</p><p><span>The fix</span>The build now refuses rotations like that.</p></div>
+        </div>
+      </div>
+    </details>
+
+    <div class="points">
+      <div><h3>Lip sync, in more detail</h3><p>Her mouth used to freeze for over 300 ms while she was still speaking, 15 times in a test. After the fix, 2 remain, and both are real pauses in her speech.</p></div>
+    </div>
+    <figure class="frame">
+      <div class="frame-in"><img width="1600" height="847" src="assets/08-lip-sync.webp" loading="lazy" alt="Lip sync pipeline in six steps, with the three fixes highlighted, and the nine visemes: rest, closed, teeth, open, wide, round, pucker, fv and lth."></div>
+    </figure>
+    <details class="uth">
+      <summary><span>Under the hood</span> How the lip sync works</summary>
+      <ul class="clean">
+        <li><b>Letter timing.</b> Her voice arrives in chunks, each with the timing of every letter as it starts to play.</li>
+        <li><b>Letters to mouth shapes.</b> Simple spelling rules pick one of nine visemes: p, b and m close the lips, o rounds them, e and i widen them.</li>
+        <li><b>Readable timing.</b> Quick letters are grouped so each shape shows for at least 60 ms, and each shape lands about 40 ms early, when the sound reaches you.</li>
+        <li><b>A fallback.</b> If letter timing goes missing, or one shape would hold past 250 ms, her mouth follows her voice volume instead.</li>
+      </ul>
+    </details>
+  </section>
+
+  <!-- Close -->
+  <section id="cut" data-toc="What I cut">
+    <p class="eyebrow">What I cut</p>
+    <h2>Most of the work was deciding what not to ship.</h2>
+    <figure class="frame"><div class="frame-in"><img width="1408" height="507" src="assets/11b-characters.webp" loading="lazy" alt="Three character directions: the blob, the stylised human (chosen) and the hybrid."></div><figcaption><b>Cut the blob and the hybrid,</b> because an interviewer you can read is easier to practise with.</figcaption></figure>
+    <figure class="frame"><div class="frame-in"><img width="1408" height="456" src="assets/11c-v2.webp" loading="lazy" alt="Concept v2, what shipped: six of her 12 expressions. Listening, warm smile, interested, skeptical, thinking and laughing."></div><figcaption><b>Cut Concept v1,</b> because she barely moved while talking. v2 was redrawn for the video tile.</figcaption></figure>
+    <figure class="frame"><div class="frame-in"><img width="1408" height="461" src="assets/11d-gesture.webp" loading="lazy" alt="A raised pen next to a raised finger, and three other cuts: setup by voice, lip sync from volume, and a timed closing line."></div><figcaption><b>Cut the raised pen,</b> because it read as writing, not as "one second". A raised finger says it at a glance.</figcaption></figure>
+    <div class="prose" style="margin-top:56px">
+      <h3>Left out of v1, on purpose</h3>
+      <ul class="clean">
+        <li><b>Accounts and cloud storage.</b> Practice is personal, so it all stays on the phone.</li>
+        <li><b>Grading technical correctness.</b> Meera judges how you answer, not whether you're right about your field. An AI can't judge every field reliably, and one wrong verdict would break trust in the whole scorecard.</li>
+        <li><b>Camera analysis.</b> A real privacy cost, for little gain over voice.</li>
+        <li><b>More interviewers.</b> One done well beats several done thinly.</li>
+        <li><b>Sharing and payments.</b> Not until the core loop is proven.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="learned" data-toc="What I learned">
+    <p class="eyebrow">What I learned</p>
+    <h2>What I'd take into the next product.</h2>
+    <blockquote class="pull">
+      <p class="pq">The hardest design work was behaviour, not screens.</p>
+      <p>When she cuts in. How long she waits in a silence. That she says "take your time", never "are you still there?". What she never asks about. None of that shows up in a mockup, and all of it decides whether the call feels real.</p>
+    </blockquote>
+    <div class="points">
+      <div><h3>Numbers find the problem. Eyes judge the fix.</h3><p>I couldn't say why she felt flat until I measured her. While talking, only her mouth moved. That told me where she was dead, not how lively to make her, because more motion isn't more life. Past a point it reads as jitter. The right amount was a judgement I made by watching her, not a number I hit.</p></div>
+      <div><h3>The AI sounds just as sure when it's wrong.</h3><p>The code came fast, and so did confident answers. Some were right, some weren't, and they read the same. My job moved to knowing what to check before anything shipped.</p></div>
+      <div><h3>If I took it further.</h3><p>I'd test it with other people and measure how many calls reach the scorecard.</p></div>
+    </div>
+  </section>
+
+  <section id="builders" data-toc="Notes for builders">
+    <p class="eyebrow">Notes for builders</p>
+    <h2>If you're building something like this.</h2>
+    <details class="uth">
+      <summary><span>Stack</span> My stack</summary>
+      <table>
+      <thead><tr><th>Part</th><th>Tool</th></tr></thead>
+      <tbody>
+        <tr><td>Voice, turn taking, tools in the app</td><td>ElevenLabs Agents</td></tr>
+        <tr><td>Scorecard</td><td>Gemini, fastest working model first, with fallbacks</td></tr>
+        <tr><td>Character rig</td><td>Rive, generated as code from vector parts with the Rive CLI</td></tr>
+        <tr><td>App</td><td>Next.js on Vercel, data in IndexedDB on the phone</td></tr>
+        <tr><td>Code</td><td>Claude Code</td></tr>
+        <tr><td>Screens and character concepts</td><td>Paper</td></tr>
+      </tbody>
+    </table>
+    </details>
+    <details class="uth" style="margin-top:12px">
+      <summary><span>Lessons</span> What cost me the most time to figure out</summary>
+      <ul class="clean">
+        <li>Use onAudioAlignmentPlayback for lip sync, not onAudioAlignment. The second arrives seconds early.</li>
+        <li>Expressive voices write style tags like "[calm]" into the text. Strip them, or turn expressive mode off.</li>
+        <li>Don't put an overloaded model first in your fallback chain. It hangs instead of failing.</li>
+        <li>Rive's free plan shows a splash screen, and the paid plans price by seat.</li>
+        <li>Check your Vercel project is linked to Git before you rely on deploys.</li>
+      </ul>
+    </details>
+  </section>
+
+</main>
+
+  <footer>
+    <div class="col">
+      <p><a href="https://vishnurnair.framer.website">← Vishnu's portfolio</a></p>
+    </div>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
