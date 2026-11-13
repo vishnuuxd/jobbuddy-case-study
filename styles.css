@@ -365,3 +365,38 @@ footer a:hover { color: var(--ink); }
   table.rub { font-size: 13px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+
+/* ---------- Refactor, 13 Nov ---------- */
+.hero .lead { margin-bottom: 16px; }
+.meta { margin: 0 0 6px; font-size: 14px; line-height: 1.55; color: var(--muted); }
+.meta.links { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-bottom: 32px; }
+.meta.links a { color: var(--accent); }
+.meta.links a::after { content: " ↗"; }
+.meta.links a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.hero-clip { margin: 0 0 40px; }
+.hero-clip .clip-box { background: var(--frame); border: 1px solid var(--line-2); border-radius: var(--r-md); padding: clamp(10px, 2.5vw, 20px); display: flex; justify-content: center; }
+.pair.one { grid-template-columns: minmax(0, 424px); }
+ul.rules-list { margin-top: 40px; }
+ol.order { margin: 12px 0 0; padding-left: 22px; }
+ol.order li { margin: 0 0 10px; padding-left: 4px; }
+ol.order li::marker { color: var(--faint); font-family: var(--mono); font-size: 13px; }
+.numk { font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 40px 0 12px; }
+.numk + .nums { margin-top: 0; }
+.ovr2.open { margin-top: 8px; }
+.ovr2.open > .o:first-child { border-top: 0; }
+/* Failure states as plain rows, no card */
+.fails { border: 0; border-radius: 0; background: none; padding: 0; }
+.f { grid-template-columns: 1fr 1.3fr; }
+.f:first-child { border-top: 1px solid var(--line); }
+.f:last-child { border-bottom: 1px solid var(--line); }
+.f .ar { display: none; }
+@media (max-width: 640px) {
+  .hero-clip .clip { height: auto; width: 100%; max-width: 280px; }
+  .f { grid-template-columns: 1fr; }
+}
+pre.term.term-open { margin: 24px 0 0; }
+details.uth > img + img { margin-top: 16px; }
+.tb details.uth { margin-top: 0; }
+details.uth .tl, details.uth .rm { margin-left: 20px; margin-right: 20px; }
+details.uth .rm { border: 0; padding: 0; background: none; }
+details.uth > .prose p { font-size: 15px; }
