@@ -45,7 +45,7 @@
     <video class="video" src="assets/demo.mp4" controls playsinline preload="metadata" poster="assets/01-hero.webp"></video>
     -->
 
-    <nav class="guide" aria-label="What's inside"><span>Inside</span><a href="#problem">The product calls I made</a><a href="#present">How Meera was crafted</a><a href="#built">How I built it alone, and checked it</a></nav>
+    <nav class="guide" aria-label="What's inside"><span>Inside</span><a href="#problem">The product calls I made</a><a href="#present">How Meera was crafted</a><a href="#built">How I built it and checked the work</a></nav>
   </div>
 
   <div class="showcase-video">
@@ -56,13 +56,18 @@
   <section id="problem" data-toc="The problem">
     <p class="eyebrow">The problem</p>
     <h2>You can tell an answer went badly. You can't tell what to fix, or how.</h2>
+    <figure class="frame" style="margin-top:32px">
+      <div class="frame-in"><img src="assets/jobbuddy-thumbnail.png" alt="JobBuddy app — home screen and scorecard" style="width:100%;"></div>
+    </figure>
     <div class="prose" style="margin-top:32px">
       <p>It's for anyone a week or two out from a real interview, who has been practising answers in their head or in a chat window.</p>
       <p>Telling your story clearly under pressure is a skill, separate from doing the job well, and it improves with practice. I've seen how people prepare, and done it myself: polish answers with AI chat, then rehearse them alone. Nothing stops you mid ramble, and nothing tells you what to fix.</p>
       <p>Getting better takes four steps: notice an answer went badly, name what was wrong, hear what a better one sounds like, and try it again for real. Alone, the first is a vague feeling and the rest are guesswork. JobBuddy covers each one. Meera reacts while you talk, the scorecard names the pattern, "you said" sits next to "try this", and you retry the question on a call.</p>
       <p>I also wanted to see how far I could take a product alone, with AI writing the code.</p>
-      <img src="assets/jobbuddy-thumbnail.png" alt="JobBuddy app — home screen and scorecard" style="width:100%;border-radius:12px;margin-bottom:24px;display:block;">
-      <p><b>Why a call, not a chat.</b> The hard part of an interview isn't knowing the answer. It's giving a good one on the spot, while someone watches you on a video call. In a chat you can pause, think and edit before you send. Rambling, fillers and answers with no result only show up when you speak. And a chat reacts only after you finish. A call can react while you talk: a nod when an answer lands, a look when you drift, a cut in when you run long.</p>
+    </div>
+    <h3 class="sub">Why a call, not a chat.</h3>
+    <div class="prose" style="margin-top:20px">
+      <p>The hard part of an interview isn't knowing the answer. It's giving a good one on the spot, while someone watches you on a video call. In a chat you can pause, think and edit before you send. Rambling, fillers and answers with no result only show up when you speak. And a chat reacts only after you finish. A call can react while you talk: a nod when an answer lands, a look when you drift, a cut in when you run long.</p>
       <p>My bet: practice works when it feels like the real thing and tells you exactly what to fix.</p>
     </div>
   </section>
@@ -95,20 +100,12 @@
         </tbody>
       </table>
     </details>
-    <div class="prose" style="margin-top:56px">
+    <div class="section-sep"></div>
+    <div class="prose" style="margin-top:48px">
       <h3>Designed for, not yet measured</h3>
       <p>Not launched, so nothing is measured yet. The first number I'd watch is how many calls reach the scorecard. Drop before it, and nothing else matters. Then how many people retry their weakest answer, because finishing shows effort and retrying shows they're getting better.</p>
       <p>A streak counts daily practice. There is no XP, because XP rewards time spent, not getting better. You only need the streak for a short while, from the day you start preparing to the day of the interview. In that window, practising a little every day matters more than anything else. The streak keeps you doing it, so by the time the real one comes, you have said your answers out loud many times.</p>
       <p>First change I'd make: the nudge to practise today lives in History. It belongs on Home, where it can pull someone back.</p>
-    </div>
-
-    <div class="prose" style="margin-top:56px">
-      <h3>The riskiest question first</h3>
-      <ol class="order">
-        <li><b>Voice first.</b> Could a voice agent run an interview, fire reactions and time lip sync? Tested in a bare call screen, so it was a call from day one.</li>
-        <li><b>Then an orb.</b> Was the call and scorecard loop worth having? A simple orb was enough to find out.</li>
-        <li><b>Meera last.</b> She was the most expensive part, and her expressions came from what the settled flows needed.</li>
-      </ol>
     </div>
   </section>
 
@@ -234,13 +231,40 @@ rive  published rive/meera.riv (93479 bytes, 2243ms, 0 errors, 0 warnings)</pre>
     <figure class="frame">
       <div class="frame-in"><img src="assets/ringing-flow.webp" width="1600" height="1024" loading="lazy" alt="Three steps. 1, Ringing: her round picture with lavender rings, Ringing…, and End call. 2, She answers: her picture grows into the video tile in 300 ms. 3, On the call: the live rig takes over and she says hi."></div>
     </figure>
-    <p class="bridge">Next: how I built her and the app, and how I checked the work.</p>
+
+    <h3 class="sub">Where my call overruled the AI</h3>
+    <p class="lead prose" style="margin-top:28px">Three times, the AI's answer looked done and wasn't. What it proposed, and what I decided.</p>
+    <div class="ovr2 open">
+      <div class="o">
+        <div class="ov"><img src="assets/v1-hero.webp" width="880" height="960" loading="lazy" alt="Before: a bun and a purple circle behind her head." style="object-position:50% 20%"><img src="assets/v2-hero.webp" width="716" height="940" loading="lazy" alt="After: long warm brown hair with a soft glow." style="object-position:50% 20%"></div>
+        <div class="ot"><h4>A profile picture, not a person</h4><p><span>The AI</span>A bun and a purple circle, to stand out on the dark screen. The bun bobbed with every nod.</p><p><span>My call</span>Long warm brown hair with a soft glow.</p></div>
+      </div>
+    </div>
+    <details class="uth wide">
+      <summary><span>2 more</span> The other two calls</summary>
+      <div class="ovr2">
+        <div class="o">
+          <div class="ov ov-q"><p class="qc dim">...</p><p class="qc">Tell me about a time a stakeholder pushed back…</p></div>
+          <div class="ot"><h4>The "..." on the question card</h4><p><span>The AI</span>Blamed a timing race.</p><p><span>My call</span>Wait for the call log. I had talked over her, and her cut off turn came through as "...". Empty lines are dropped now.</p></div>
+        </div>
+        <div class="o">
+          <div class="ov"><img src="assets/v1-notepad.webp" width="880" height="400" loading="lazy" alt="Before: a notepad low at her left and the pen up at her shoulder." style="object-position:50% 100%"><img src="assets/writing-loop.gif" width="424" height="556" loading="lazy" alt="After: she writes on a clipboard tilted toward her, the pen behind the board." style="object-position:50% 85%"></div>
+          <div class="ot"><h4>Writing that looked staged</h4><p><span>The AI</span>The pen shook in the air, then sat on the page.</p><p><span>My call</span>A clipboard tilted toward her, with the pen working behind the board.</p></div>
+        </div>
+      </div>
+    </details>
+    <div class="prose" style="margin-top:28px">
+      <p><b>Fixes became rules.</b> When a bug had a clear cause, the build learned to refuse it. By the end, 120+ unit tests and 3 end to end suites all passed.</p>
+    </div>
+
+    <p class="bridge">Next: how I built it and what real calls caught that tests didn't.</p>
   </section>
 
   <!-- Act 3. Building -->
   <section id="built" data-toc="How I built it alone with AI">
     <p class="eyebrow">How I built it alone with AI</p>
-    <h2>How I checked the work.</h2>
+    <h2>How I built it and checked the work.</h2>
+    <p class="lead prose" style="margin-top:28px">I directed AI agents that wrote the code. My job was deciding what to build, in what order, and knowing what done actually looked like.</p>
     <details class="uth">
       <summary><span>Who did what</span> Me, Claude and Claude Code</summary>
       <div class="prose">
@@ -248,6 +272,16 @@ rive  published rive/meera.riv (93479 bytes, 2243ms, 0 errors, 0 warnings)</pre>
       <p>I reviewed every step: the spec before anything was built, the build once it came back, and the proof that it worked. Nothing counted as done on a report alone.</p>
       </div>
     </details>
+
+    <div class="prose" style="margin-top:56px">
+      <h3>The riskiest question first</h3>
+      <ol class="order">
+        <li><b>Voice first.</b> Could a voice agent run an interview, fire reactions and time lip sync? Tested in a bare call screen, so it was a call from day one.</li>
+        <li><b>Then an orb.</b> Was the call and scorecard loop worth having? A simple orb was enough to find out.</li>
+        <li><b>Meera last.</b> She was the most expensive part, and her expressions came from what the settled flows needed.</li>
+      </ol>
+    </div>
+
     <p class="k numk">Build quality checks</p>
     <div class="nums">
       <div class="num hl"><strong>3x</strong><span>more movement while she talks. Measured, then tuned by eye.</span></div>
@@ -277,31 +311,6 @@ rive  published rive/meera.riv (93479 bytes, 2243ms, 0 errors, 0 warnings)</pre>
         <li><b>Real call logs.</b> When something broke on a call, the fix started from the log, not a guess.</li>
       </ul>
     </details>
-
-    <h3 class="sub">Where my call overruled the AI</h3>
-    <p class="lead prose" style="margin-top:28px">Three times, the AI's answer looked done and wasn't. What it proposed, and what I decided.</p>
-    <div class="ovr2 open">
-      <div class="o">
-        <div class="ov"><img src="assets/v1-hero.webp" width="880" height="960" loading="lazy" alt="Before: a bun and a purple circle behind her head." style="object-position:50% 20%"><img src="assets/v2-hero.webp" width="716" height="940" loading="lazy" alt="After: long warm brown hair with a soft glow." style="object-position:50% 20%"></div>
-        <div class="ot"><h4>A profile picture, not a person</h4><p><span>The AI</span>A bun and a purple circle, to stand out on the dark screen. The bun bobbed with every nod.</p><p><span>My call</span>Long warm brown hair with a soft glow.</p></div>
-      </div>
-    </div>
-    <details class="uth wide">
-      <summary><span>2 more</span> The other two calls</summary>
-      <div class="ovr2">
-        <div class="o">
-          <div class="ov ov-q"><p class="qc dim">...</p><p class="qc">Tell me about a time a stakeholder pushed back…</p></div>
-          <div class="ot"><h4>The "..." on the question card</h4><p><span>The AI</span>Blamed a timing race.</p><p><span>My call</span>Wait for the call log. I had talked over her, and her cut off turn came through as "...". Empty lines are dropped now.</p></div>
-        </div>
-        <div class="o">
-          <div class="ov"><img src="assets/v1-notepad.webp" width="880" height="400" loading="lazy" alt="Before: a notepad low at her left and the pen up at her shoulder." style="object-position:50% 100%"><img src="assets/writing-loop.gif" width="424" height="556" loading="lazy" alt="After: she writes on a clipboard tilted toward her, the pen behind the board." style="object-position:50% 85%"></div>
-          <div class="ot"><h4>Writing that looked staged</h4><p><span>The AI</span>The pen shook in the air, then sat on the page.</p><p><span>My call</span>A clipboard tilted toward her, with the pen working behind the board.</p></div>
-        </div>
-      </div>
-    </details>
-    <div class="prose" style="margin-top:28px">
-      <p><b>Fixes became rules.</b> When a bug had a clear cause, the build learned to refuse it. By the end, 120+ unit tests and 3 end to end suites all passed.</p>
-    </div>
 
     <h3 class="sub">What real calls caught that tests didn't</h3>
     <p class="lead prose" style="margin-top:28px">Every test passed, and four bugs still showed up only on real calls. Each fix started from the cause in the call log, not the symptom.</p>
