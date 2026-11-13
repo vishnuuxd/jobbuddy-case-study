@@ -400,3 +400,9 @@ details.uth > img + img { margin-top: 16px; }
 details.uth .tl, details.uth .rm { margin-left: 20px; margin-right: 20px; }
 details.uth .rm { border: 0; padding: 0; background: none; }
 details.uth > .prose p { font-size: 15px; }
+.hero .facts { margin: 0 0 40px; }
+.hero .lead { margin-bottom: 32px; }
+.facts dd.links { display: flex; flex-direction: column; gap: 4px; }
+.facts dd.links a { color: var(--accent); }
+.facts dd.links a::after { content: " ↗"; }
+.facts dd.links a:hover { text-decoration: underline; text-underline-offset: 3px; }
