@@ -209,10 +209,37 @@
     <div class="points">
       <div><h3>12 faces, 21 states</h3><p>Her 12 expressions are still faces. States are what the app asks her to do: 7 moods she holds, like listening, and 14 reactions she plays, like a nod. A state adds movement and timing to a face, so a few faces cover a lot. Every tile below is rendered from the rig.</p></div>
     </div>
+    <figure class="frame">
+      <div class="frame-in">
+        <div class="fm" role="group" aria-label="Which of her 12 faces each of the 21 states uses">
+          <div class="fm-legend"><span><span class="fm-chip m">Mood</span> held until the app switches it</span><span><span class="fm-chip r">Reaction</span> played once, then back to the mood</span></div>
+          <div class="fm-grid">
+            <div>
+              <div class="fm-row"><img src="assets/faces/listening.webp" width="96" height="96" alt="" loading="lazy"><div class="fm-fn">Listening</div><div class="fm-chips"><span class="fm-chip m">Idle</span><span class="fm-chip m">Listening</span></div></div>
+              <div class="fm-row"><img src="assets/faces/warmSmile.webp" width="96" height="96" alt="" loading="lazy"><div class="fm-fn">Warm smile</div><div class="fm-chips"><span class="fm-chip r">Smile</span></div></div>
+              <div class="fm-row"><img src="assets/faces/talking.webp" width="96" height="96" alt="" loading="lazy"><div class="fm-fn">Talking</div><div class="fm-chips"><span class="fm-chip m">Talking</span></div></div>
+              <div class="fm-row"><img src="assets/faces/expectant.webp" width="96" height="96" alt="" loading="lazy"><div class="fm-fn">Expectant</div><div class="fm-chips"><span class="fm-chip m">Intake</span><span class="fm-chip r">Expectant</span></div></div>
+              <div class="fm-row"><img src="assets/faces/interested.webp" width="96" height="96" alt="" loading="lazy"><div class="fm-fn">Interested</div><div class="fm-chips"><span class="fm-chip r">Brow raise</span><span class="fm-chip r">Lean in<i>eyes</i></span></div></div>
+              <div class="fm-row"><img src="assets/faces/skeptical.webp" width="96" height="96" alt="" loading="lazy"><div class="fm-fn">Skeptical</div><div class="fm-chips"><span class="fm-chip m">Skeptical</span></div></div>
+              <div class="fm-row"><img src="assets/faces/writing.webp" width="96" height="96" alt="" loading="lazy"><div class="fm-fn">Writing</div><div class="fm-chips"><span class="fm-chip m">Writing</span><span class="fm-chip r">Glance down<i>eyes</i></span></div></div>
+            </div>
+            <div>
+              <div class="fm-row"><img src="assets/faces/thinking.webp" width="96" height="96" alt="" loading="lazy"><div class="fm-fn">Thinking</div><div class="fm-chips"><span class="fm-chip m">Thinking</span><span class="fm-chip r">Think</span></div></div>
+              <div class="fm-row"><img src="assets/faces/impressed.webp" width="96" height="96" alt="" loading="lazy"><div class="fm-fn">Impressed</div><div class="fm-chips"><span class="fm-chip r">Impressed</span></div></div>
+              <div class="fm-row"><img src="assets/faces/laughing.webp" width="96" height="96" alt="" loading="lazy"><div class="fm-fn">Laughing</div><div class="fm-chips"><span class="fm-chip r">Laugh</span></div></div>
+              <div class="fm-row"><img src="assets/faces/reassuring.webp" width="96" height="96" alt="" loading="lazy"><div class="fm-fn">Reassuring</div><div class="fm-chips"><span class="fm-chip r">Reassure</span></div></div>
+              <div class="fm-row"><img src="assets/faces/surprised.webp" width="96" height="96" alt="" loading="lazy"><div class="fm-fn">Surprised</div><div class="fm-chips"><span class="fm-chip r">Surprised</span></div></div>
+              <div class="fm-row"><div class="fm-none" aria-hidden="true"></div><div class="fm-fn">No new face<small>head, posture, arm</small></div><div class="fm-chips"><span class="fm-chip r">Nod</span><span class="fm-chip r">Sit up</span><span class="fm-chip r">One second</span><span class="fm-chip r">Check watch</span></div></div>
+            </div>
+          </div>
+          <div class="fm-tot"><b>12 faces</b> <span aria-hidden="true">→</span> <span class="fm-chip m">7 moods</span> + <span class="fm-chip r">14 reactions</span> = <b>21 states</b></div>
+        </div>
+      </div>
+    </figure>
     <pre class="term term-open">$ node rive/rig/make-rig.js &amp;&amp; rive rive --publish=local
 rive  published rive/meera.riv (93479 bytes, 2243ms, 0 errors, 0 warnings)</pre>
     <figure class="frame" style="margin-top:12px">
-      <div class="frame-in"><img src="assets/states.webp" width="1504" height="932" loading="lazy" alt="21 short loops rendered from the rig. Moods: idle, intake, listening, skeptical, writing, talking and thinking. Reactions: nod, smile, brow raise, glance down, one second, check watch, sit up, lean in, expectant, think, impressed, laugh, reassure and surprised."></div>
+      <div class="frame-in"><img src="assets/states.webp" width="1504" height="1032" loading="lazy" alt="21 short loops rendered from the rig, labelled 7 moods and 14 reactions. Moods: idle, intake, listening, skeptical, writing, talking and thinking. Reactions: nod, smile, brow raise, glance down, one second, check watch, sit up, lean in, expectant, think, impressed, laugh, reassure and surprised."></div>
     </figure>
     <details class="uth">
       <summary><span>Under the hood</span> How the rig is built</summary>

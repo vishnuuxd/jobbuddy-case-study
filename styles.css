@@ -406,3 +406,22 @@ details.uth > .prose p { font-size: 15px; }
 @media (max-width: 640px) {
   .hero-clip .clip { height: auto; width: 100%; max-width: 280px; }
 }
+
+/* ---------- Faces and states diagram ---------- */
+.fm { background: var(--card); border: 1px solid var(--line-2); border-radius: var(--r-md); padding: 20px 24px; color: var(--ink); }
+.fm-legend { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; padding-bottom: 14px; font-size: 13px; line-height: 1.4; color: var(--muted); }
+.fm-legend > span { display: inline-flex; align-items: center; gap: 8px; }
+.fm-chip { display: inline-flex; align-items: center; height: 26px; padding: 0 10px; border-radius: 99px; font-size: 13px; font-weight: 500; line-height: 1; white-space: nowrap; }
+.fm-chip.m { background: #2d2442; color: #fff; }
+.fm-chip.r { background: #e6f9a8; color: var(--ink); }
+.fm-chip i { font-style: normal; font-weight: 400; opacity: .65; margin-left: 5px; font-size: 12px; }
+.fm-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 28px; }
+.fm-row { display: grid; grid-template-columns: 44px 92px 1fr; align-items: center; gap: 12px; padding: 9px 0; border-top: 1px solid var(--line); }
+main .fm-row img, .fm-none { width: 44px; height: 44px; border-radius: 10px !important; }
+.fm-none { border: 1.5px dashed var(--strong-line); }
+.fm-fn { font-size: 13.5px; font-weight: 500; line-height: 1.3; }
+.fm-fn small { display: block; font: 400 10.5px/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--faint); margin-top: 2px; }
+.fm-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.fm-tot { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--muted); }
+.fm-tot b { color: var(--ink); font-weight: 600; }
+@media (max-width: 760px) { .fm-grid { grid-template-columns: 1fr; } .fm { padding: 16px; } }
